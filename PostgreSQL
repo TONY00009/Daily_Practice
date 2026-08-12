@@ -1,0 +1,6 @@
+# Q1: Find all posts which were reacted to with a heart------------------>
+select DISTINCT(p.post_id), p.poster, p.post_text, p.post_keywords, p.post_date
+FROM facebook_posts as p
+FULL OUTER JOIN facebook_reactions as r
+ON r.post_id = p.post_id
+WHERE reaction = 'heart'

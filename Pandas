@@ -1,0 +1,10 @@
+#Q1: Find all posts which were reacted to with a heart------------------------>
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+heart_table = facebook_reactions[facebook_reactions['reaction'] == 'heart']
+heart_ids = heart_table['post_id']
+result = facebook_posts[facebook_posts['post_id'].isin(heart_ids)]
+
+

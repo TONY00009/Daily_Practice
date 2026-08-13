@@ -6,5 +6,16 @@ import pandas as pd
 heart_table = facebook_reactions[facebook_reactions['reaction'] == 'heart']
 heart_ids = heart_table['post_id']
 result = facebook_posts[facebook_posts['post_id'].isin(heart_ids)]
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+Q2: Finding Updated Records (getting highest updated salary of the employees)----------------->
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+ms_employee_salary.head()
+df = ms_employee_salary
+
+high_salary_df = df.groupby('id')[['id','first_name','last_name',
+                    'salary','department_id']].max()

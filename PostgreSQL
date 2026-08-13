@@ -4,3 +4,11 @@ FROM facebook_posts as p
 FULL OUTER JOIN facebook_reactions as r
 ON r.post_id = p.post_id
 WHERE reaction = 'heart'
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q2: Finding Updated Records (getting highest updated salary of the employees)------------------->
+select DISTINCT ON (id)
+    id, first_name, last_name, department_id, salary
+    from ms_employee_salary
+    ORDER BY id, salary DESC;

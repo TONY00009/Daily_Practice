@@ -32,3 +32,15 @@ df_c = customers
 df_o = orders
 df = pd.merge(df_c, df_o, left_on = 'id', right_on = 'cust_id', how = 'outer')
 df_sum = df.groupby(['cust_id','first_name'])['total_order_cost'].sum().reset_index().sort_values(by = 'first_name')
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q4: Average Salaries --->
+Compare each employee's salary with the average salary of the corresponding department. Output the department, 
+first name, and salary of employees along with the average salary of that department---------------------------------->
+
+# Import your libraries
+import pandas as pd
+# Start writing code
+df = employee[['department','first_name','salary']].sort_values(by = 'department')
+df['avg_salary'] = df.groupby('department')['salary'].transform('mean')
+df

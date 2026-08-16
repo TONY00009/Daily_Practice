@@ -33,3 +33,11 @@ SELECT department, first_name, salary, AVG(salary)
 OVER(PARTITION BY department) AS avg_salary
 FROM employee
 ORDER BY department ASC;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q5: Calculate Samantha's and Lisa's total sales revenue
+What is the total sales revenue of Samantha and Lisa?-------------------------------------------->
+
+select SUM(sales_revenue) AS total_revenue
+FROM sales_performance
+WHERE  salesperson IN ('Samantha','Lisa');

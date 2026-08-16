@@ -44,3 +44,15 @@ import pandas as pd
 df = employee[['department','first_name','salary']].sort_values(by = 'department')
 df['avg_salary'] = df.groupby('department')['salary'].transform('mean')
 df
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q5: Calculate Samantha's and Lisa's total sales revenue
+What is the total sales revenue of Samantha and Lisa?------------------------------------->
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = sales_performance
+df_name = df[(df['salesperson'] == 'Samantha') | (df['salesperson'] == 'Lisa')]
+df_name['sales_revenue'].sum()

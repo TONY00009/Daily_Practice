@@ -41,3 +41,12 @@ What is the total sales revenue of Samantha and Lisa?---------------------------
 select SUM(sales_revenue) AS total_revenue
 FROM sales_performance
 WHERE  salesperson IN ('Samantha','Lisa');
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q6: Wine varieties tasted by 'Roger Voss' ----->
+Find wine varieties tasted by 'Roger Voss' and with a value in the 'region_1' column of the dataset. Output unique variety names only.-------------------------->
+
+SELECT DISTINCT(variety)
+FROM winemag_p2
+WHERE taster_name = 'Roger Voss' AND region_1 IS NOT NULL;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

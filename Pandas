@@ -56,3 +56,16 @@ import pandas as pd
 df = sales_performance
 df_name = df[(df['salesperson'] == 'Samantha') | (df['salesperson'] == 'Lisa')]
 df_name['sales_revenue'].sum()
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q6: Hour Of Highest Gas Expense 
+Find the hour of the single ride with the highest gasoline cost. Assume only one ride has this maximum, so exactly one hour qualifies---------------->
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = lyft_rides
+df_max_gasoline = df[df['gasoline_cost'] == df['gasoline_cost'].max()]
+df_hour = df_max_gasoline[['hour']]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -81,3 +81,9 @@ df = lyft_rides
 df_max_gasoline = df[df['gasoline_cost'] == df['gasoline_cost'].max()]
 df_hour = df_max_gasoline[['hour']]
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q8: Find all Lyft rides which happened on rainy days before noon 
+Find all Lyft rides which happened on rainy days before noon---------------------->
+
+select * from lyft_rides
+WHERE weather = 'rainy' AND hour < 12;

@@ -59,3 +59,9 @@ SELECT client_id, EXTRACT(month FROM time_id) as month, COUNT(DISTINCT user_id)
 FROM fact_events
 GROUP BY client_id, month;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q8: Find all Lyft rides which happened on rainy days before noon 
+Find all Lyft rides which happened on rainy days before noon-------------------------------------------------->
+
+select * from lyft_rides
+WHERE weather = 'rainy' AND hour < 12;

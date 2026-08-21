@@ -85,5 +85,22 @@ df_hour = df_max_gasoline[['hour']]
 Q8: Find all Lyft rides which happened on rainy days before noon 
 Find all Lyft rides which happened on rainy days before noon---------------------->
 
-select * from lyft_rides
-WHERE weather = 'rainy' AND hour < 12;
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = lyft_drivers
+final_df = df[(df['yearly_salary'] <= 30000) | (df['yearly_salary'] >= 70000)]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q9: Artist Appearance Count ---->
+Find how many times each artist appeared on the Spotify ranking list. Output the artist name along with the corresponding number of occurrences. 
+Order records by the number of occurrences in descending order------------------------------------------------------>
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = spotify_worldwide_daily_song_ranking
+df_final = df['artist'].value_counts().reset_index(name='n_occurences')
+df_final

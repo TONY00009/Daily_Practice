@@ -76,3 +76,18 @@ FROM spotify_worldwide_daily_song_ranking
 GROUP BY artist
 ORDER BY n_occurences DESC;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q10: Salary Less Than Twice The Average
+     Write a query to get the list of managers whose salary is less than twice the average salary of employees reporting to them. 
+     For these managers, output their ID, salary and the average salary of employees reporting to them-------------------------------------->
+
+    SELECT m1.manager_empl_id, d2.salary, AVG(d1.salary)
+    FROM map_employee_hierarchy m1
+    JOIN dim_employee d1
+    ON m1.empl_id = d1.empl_id
+    JOIN dim_employee d2
+    ON m1.manager_empl_id = d2.empl_id
+    GROUP BY m1.manager_empl_id, d2.salary
+    HAVING d2.salary < 2 * AVG(d1.salary);
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

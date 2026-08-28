@@ -116,3 +116,17 @@ Q10:  Top Ranked Songs ------>
     df[df['position'] == 1]['trackname'].value_counts().reset_index(name = 'times_top1')
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Q11: Olympics Events List By Age---------------->
+    Find the lowest, average, and the highest ages of athletes across all Olympics. 
+    HINT: If athlete participated in more than one discipline at one Olympic games, consider it as a separate athlete, no need to remove such edge cases.
+
+  # Import your libraries
+  import pandas as pd
+  
+  # Start writing code
+  df = olympics_athletes_events
+  
+  final_df = pd.DataFrame({'lowest_age': [df['age'].min()],
+                  'mean_age' : [df['age'].mean()], 'highest_age' : [df['age'].max()]})
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

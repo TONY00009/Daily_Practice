@@ -105,3 +105,15 @@ Q12:  Find all athletes who were older than 40 years when they won either Bronze
     SELECT name
     FROM olympics_athletes_events
     WHERE medal in ('Silver','Bronze') AND age > 40;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q13: Order Details------------>
+    Find order details made by Jill and Eva. Consider the Jill and Eva as first names of customers. 
+    Output the order date, details and cost along with the first name. Order records based on the customer id in ascending order-------------------->
+    
+    SELECT c.first_name, o.order_date, o.order_details, o.total_order_cost
+    FROM customers c
+    FULL OUTER JOIN orders o
+    ON c.id = o.cust_id
+    WHERE c.first_name IN ('Jill','Eva')
+    ORDER BY o.cust_id ASC;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

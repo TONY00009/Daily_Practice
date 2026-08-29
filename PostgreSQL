@@ -117,3 +117,11 @@ Q13: Order Details------------>
     WHERE c.first_name IN ('Jill','Eva')
     ORDER BY o.cust_id ASC;
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q14: Departments With 5 Employees---------->
+    Find departments with at more than or equal 5 employees.
+
+    SELECT department
+    FROM employee
+    GROUP BY department
+    HAVING COUNT(id) >= 5;

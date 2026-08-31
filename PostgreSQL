@@ -125,3 +125,11 @@ Q14: Departments With 5 Employees---------->
     FROM employee
     GROUP BY department
     HAVING COUNT(id) >= 5;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q15: April Admin Employees------------>
+    Find the number of employees working in the Admin department that joined in April or later, in any year.
+
+    SELECT COUNT(worker_id) AS n_admins
+    FROM worker
+    WHERE EXTRACT(MONTH FROM joining_date) > 4;

@@ -129,4 +129,12 @@ Q11: Olympics Events List By Age---------------->
   final_df = pd.DataFrame({'lowest_age': [df['age'].min()],
                   'mean_age' : [df['age'].mean()], 'highest_age' : [df['age'].max()]})
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q12: Find all athletes who were older than 40 years when they won either Bronze or Silver medals--------->
+      Find all athletes who were older than 40 years when they won either Bronze or Silver medals.
 
+    # Import your libraries
+    import pandas as pd
+    
+    # Start writing code
+    df = olympics_athletes_events
+    medal_df = df[df['medal'].isin(['Silver', 'Bronze']) & (df['age'] > 40)][['name']]

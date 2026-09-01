@@ -133,3 +133,14 @@ Q15: April Admin Employees------------>
     SELECT COUNT(worker_id) AS n_admins
     FROM worker
     WHERE EXTRACT(MONTH FROM joining_date) > 4;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q16: First Names With Six Letters Ending in 'h' -------------->
+    Find all workers whose first name contains 6 letters and also ends with the letter 'h'.
+    Display all information about the workers in output.
+
+    SELECT *
+    FROM worker
+    WHERE first_name LIKE '_____%h';
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+

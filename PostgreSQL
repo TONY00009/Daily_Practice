@@ -143,4 +143,10 @@ Q16: First Names With Six Letters Ending in 'h' -------------->
     FROM worker
     WHERE first_name LIKE '_____%h';
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q17: Find drafts which contains the word 'optimism' ---------------->
+    A workplace file-storage system wants to help users quickly locate their own draft files related to a specific topic. Find all files whose name starts with "draft" (regardless of case) and whose content includes "optimism" 
+    anywhere within it, also regardless of case. Output all columns for these files.
 
+    SELECT *
+    FROM google_file_store
+    WHERE filename LIKE 'draft%' AND contents LIKE '%optimism%';
